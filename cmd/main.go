@@ -12,7 +12,7 @@ import (
 	"github.com/hashicorp/consul/api"
 )
 
-func registerService(client *api.Client, serviceID, serviceName string, servicePort int) {
+func RegisterService(client *api.Client, serviceID, serviceName string, servicePort int) {
 	registration := &api.AgentServiceRegistration{
 		ID:   serviceID,
 		Name: serviceName,
@@ -38,9 +38,9 @@ func main() {
 	}
 
 	// Register services
-	registerService(client, "product-service", "product-service", 8081)
-	registerService(client, "order-service", "order-service", 8082)
-	registerService(client, "user-service", "user-service", 8083)
+	RegisterService(client, "product-service", "product-service", 8081)
+	RegisterService(client, "order-service", "order-service", 8082)
+	RegisterService(client, "user-service", "user-service", 8083)
 
 	// Handle interrupt signal for graceful shutdown
 	interrupt := make(chan os.Signal, 1)
