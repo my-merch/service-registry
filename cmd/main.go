@@ -1,5 +1,5 @@
 // service-registry/main.go
-package main
+package cmd
 
 import (
 	"log"
